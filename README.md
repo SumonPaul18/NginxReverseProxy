@@ -1,4 +1,8 @@
 #### 
+Create a Project Directory
+####
+    mkdir /root/nginxproxy
+#### 
     version: '3.8'
     services:
       app:
@@ -9,8 +13,8 @@
           - '91:81'
           - '443:443'
         volumes:
-          - ./data:/data
-          - ./letsencrypt:/etc/letsencrypt
+          - /root/nginxproxy/data:/data
+          - /root/nginxproxy/letsencrypt:/etc/letsencrypt
 
 ####
     docker-compose up -d
